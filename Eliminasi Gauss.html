@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Penyelesaian Sistem Persamaan Linier &#8212; My sample book</title>
+    <title>Penyelesaian Sistem Persamaan Linear &#8212; My sample book</title>
   
   
   
@@ -59,11 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Penyelesaian Sistem Persamaan Linear';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Eliminasi Gauss';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Penyelesaian Sistem Persamaan Linear" href="Eliminasi%20Gauss.html" />
-    <link rel="prev" title="Sistem Persamaan Linear" href="Persamaan%20Linear.html" />
+    <link rel="prev" title="Penyelesaian Sistem Persamaan Linier" href="Penyelesaian%20Sistem%20Persamaan%20Linear.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -183,8 +182,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Persamaan%20Linear.html">Sistem Persamaan Linear</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Penyelesaian Sistem Persamaan Linier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gauss.html">Penyelesaian Sistem Persamaan Linear</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Penyelesaian%20Sistem%20Persamaan%20Linear.html">Penyelesaian Sistem Persamaan Linier</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Penyelesaian Sistem Persamaan Linear</a></li>
 </ul>
 
     </div>
@@ -256,7 +255,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPenyelesaian Sistem Persamaan Linear.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FEliminasi Gauss.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +285,7 @@
       
       
       
-      <li><a href="_sources/Penyelesaian Sistem Persamaan Linear.md" target="_blank"
+      <li><a href="_sources/Eliminasi Gauss.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Penyelesaian Sistem Persamaan Linier</h1>
+    <h1>Penyelesaian Sistem Persamaan Linear</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,7 +381,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss-jordan">Eliminasi Gauss Jordan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
 </ul>
             </nav>
         </div>
@@ -394,55 +393,183 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="penyelesaian-sistem-persamaan-linier">
-<h1>Penyelesaian Sistem Persamaan Linier<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+  <hr class="docutils" />
+<p>title: Eliminasi Gauss</p>
+<hr class="docutils" />
+<section id="penyelesaian-sistem-persamaan-linear">
+<h1>Penyelesaian Sistem Persamaan Linear<a class="headerlink" href="#penyelesaian-sistem-persamaan-linear" title="Link to this heading">#</a></h1>
 <section id="operasi-baris-elementer">
 <h2>Operasi Baris Elementer<a class="headerlink" href="#operasi-baris-elementer" title="Link to this heading">#</a></h2>
-<p>Operasi Baris Elementer (OBE) adalah salah satu alternatif dalam menyelesaikan suatu bentuk matriks seperti menentukan invers matriks dan penerapan matriks pada sistem persamaan linear menggunakan dua cara yaitu “Eliminasi Gauss” dan “Eliminasi Gauss-Jordan”.</p>
 </section>
 <section id="eliminasi-gauss">
 <h2>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h2>
-<p>Metode eliminasi Gauss adalah metode untuk operasi nilai-nilai dalam matriks, untuk membuat matriks lebih sederhana lagi. Metode eliminasi gaus dikembangkan dari metode eliminasi, dengan cara menghilangkan atau mengurangi jumlah variabel, untuk mendapatkan nilai variabel bebas.</p>
-</section>
-<section id="eliminasi-gauss-jordan">
-<h2>Eliminasi Gauss Jordan<a class="headerlink" href="#eliminasi-gauss-jordan" title="Link to this heading">#</a></h2>
-<p>Eliminasi Gauss Jordan adalah algoritma yang memungkinkan kita mengubah sistem linear menjadi sistem ekuivalen dalam bentuk eselon baris tereduksi.</p>
-<p>Contoh soal 1
-Selesaikan dengan Menggunakan Eliminasi Gauss</p>
+<p><em>Contoh soal 1</em>
+Selesaikan dengan mengumakan eliminasi gauss</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{array}{ac}
-x_1+2x_2+3x_3&amp;=6\\
-2x_1+4x_2+6x_3&amp;=12\\
-x_3+x_2&amp;=2
+\begin{array}{cc}
+x_1+2x_2+3x_3z&amp;=6\\
+2x_1+4x_2+6x_12&amp;=4\\
+x_3-x_2&amp;=2
 \end{array}
 \end{split}\]</div>
-<p>Penyelesaian</p>
-<p>Contoh Soal 2
-$<span class="math notranslate nohighlight">\(
-\begin{array}{ac}
+<p><em>Contoh soal 2</em>
+Selesaikan dengan mengumakan eliminasi gauss</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
 x_1+x_2+x_3&amp;=3\\
 2x_1+x_3&amp;=5\\
-x_3+2x_2&amp;=3
+x_1+2x_2&amp;=3\\
 \end{array}
-\)</span>$</p>
-<p>Penyelesaian</p>
-<p>Contoh Soal 3
-$<span class="math notranslate nohighlight">\(
-\begin{array}{ac}
-2x_1+2x_2&amp;=y\\
+\end{split}\]</div>
+<p><em>Contoh Soal 3</em>
+Selesaikan dengan mengumakan eliminasi gauss</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
+2x_1+2x_2&amp;=4\\
 x_1+x_2&amp;=2\\
 \end{array}
-\)</span>$</p>
-<p>Penyelesaian</p>
-<p>Contoh Soal 4
-$<span class="math notranslate nohighlight">\(
-\begin{array}{ac}
+\end{split}\]</div>
+<p><em>Contoh soal 4</em>
+Selesaikan dengan mengumakan eliminasi gauss</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{cc}
 x_1+x_2&amp;=5\\
 x_1+2x_3&amp;=6\\
 \end{array}
+\end{split}\]</div>
+</section>
+<section id="jawaban">
+<h2>Jawaban<a class="headerlink" href="#jawaban" title="Link to this heading">#</a></h2>
+<p><em>Soal 1</em>
+$<span class="math notranslate nohighlight">\(
+begin{aligned}
+x_1 + 2x_2 + 3x_3 &amp;= 6 \\
+2x_1 + 4x_2 + 6x_3 &amp;= 12 \\
+x_3 - x_2 &amp;= 2
+\end{array}
+\)</span>$
+Matriks augmented:</p>
+<p>\begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; | 6 \
+2 &amp; 4 &amp; 6 &amp; | 12 \
+0 &amp; -1 &amp; 1 &amp; | 2
+\end{bmatrix}</p>
+<p>Baris kedua dikurangi 2 kali baris pertama:</p>
+<p>\begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; | 6 \
+0 &amp; 0 &amp; 0 &amp; | 0 \
+0 &amp; -1 &amp; 1 &amp; | 2
+\end{bmatrix}</p>
+<p>Baris kedua menjadi nol, menunjukkan bahwa sistem memiliki solusi tak hingga.
+Variabel bebas: , maka
+$<span class="math notranslate nohighlight">\(
+x_2 = t - 2, \quad x_1 = -2x_2 - 3x_3 + 6 = -2(t-2) - 3t + 6 = -5t + 10. 
+\)</span>$
+\begin{aligned}
+x_1 &amp;= -5t + 10, \
+x_2 &amp;= t - 2, \
+x_3 &amp;= t, \quad t \in \mathbb{R}.
+\end{aligned}</p>
+<p><em>Soal 2</em>
+\begin{aligned}
+x_1 + x_2 + x_3 &amp;= 3 \
+2x_1 + 0x_2 + x_3 &amp;= 5 \
+x_1 - 2x_2 + 0x_3 &amp;= 3
+\end{aligned}</p>
+<p>Matriks augmented:</p>
+<p>\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; | 3 \
+2 &amp; 0 &amp; 1 &amp; | 5 \
+1 &amp; -2 &amp; 0 &amp; | 3
+\end{bmatrix}</p>
+<p>Eliminasi dengan mengurangi baris kedua dengan 2 kali baris pertama:</p>
+<p>\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; | 3 \
+0 &amp; -2 &amp; -1 &amp; | -1 \
+1 &amp; -2 &amp; 0 &amp; | 3
+\end{bmatrix}</p>
+<p>\begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; | 3 \
+0 &amp; -2 &amp; -1 &amp; | -1 \
+0 &amp; -3 &amp; -1 &amp; | 0
+\end{bmatrix}</p>
+<p>Eliminasi dengan mengubah baris ketiga:
+$<span class="math notranslate nohighlight">\(
+B_3 = B_3 - \frac{3}{2} B_2
 \)</span>$</p>
-<p>Penyelesaian</p>
+<p>\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; | 3 \ 0 &amp; -2 &amp; -1 &amp; | -1 \ 0 &amp; 0 &amp; \frac{1}{2} &amp; | -\frac{3}{2} \end{bmatrix}</p>
+<p>Dari baris ketiga:
+$<span class="math notranslate nohighlight">\(
+x_3 = -3.
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+-2x_2 -1(-3) = -1 \Rightarrow -2x_2 +3 = -1 \Rightarrow -2x_2 = -4 \Rightarrow x_2 = 2.
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+x_1 + 2 + (-3) = 3 \Rightarrow x_1 -1 = 3 \Rightarrow x_1 = 4.
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+(x_1, x_2, x_3) = (4, 2, -3).
+\)</span>$</p>
+<p><em>Soal 3</em>
+\begin{aligned}
+2x_1 + 2x_2 &amp;= Y \
+x_1 + x_2 &amp;= 2
+\end{aligned}</p>
+<p>Matriks augmented:</p>
+<p>\begin{bmatrix}
+2 &amp; 2 &amp; | Y \
+1 &amp; 1 &amp; | 2
+\end{bmatrix}</p>
+<p>Eliminasi dengan membagi baris pertama dengan 2:</p>
+<p>\begin{bmatrix}
+1 &amp; 1 &amp; | \frac{Y}{2} \
+1 &amp; 1 &amp; | 2
+\end{bmatrix}</p>
+<p>Kurangi baris kedua dengan baris pertama:</p>
+<p>\begin{bmatrix}
+1 &amp; 1 &amp; | \frac{Y}{2} \
+0 &amp; 0 &amp; | 2 - \frac{Y}{2}
+\end{bmatrix}</p>
+<p>Jika , baris kedua menjadi , sehingga ada solusi tak hingga:
+$<span class="math notranslate nohighlight">\(
+x_1 = 2 - x_2.
+\)</span>$</p>
+<p><em>Soal 4</em></p>
+<p>\begin{aligned}
+x_1 + x_2 &amp;= 5 \
+x_1 + 2x_3 &amp;= 6
+\end{aligned}</p>
+<p>Matriks augmented:</p>
+<p>\begin{bmatrix}
+1 &amp; 1 &amp; 0 &amp; | 5 \
+1 &amp; 0 &amp; 2 &amp; | 6
+\end{bmatrix}</p>
+<p>Eliminasi dengan mengurangi baris kedua dengan baris pertama:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+1 &amp; 1 &amp; 0 &amp; | 5 \\
+0 &amp; -1 &amp; 2 &amp; | 1
+\end{bmatrix}
+\)</span><span class="math notranslate nohighlight">\(
+Dari baris kedua:
+\)</span><span class="math notranslate nohighlight">\(
+-x_2 + 2x_3 = 1 \Rightarrow x_2 = 2x_3 - 1.
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+x_1 + (2x_3 - 1) = 5 \Rightarrow x_1 = 6 - 2x_3.
+\)</span>$
+Solusi umum:</p>
+<p>\begin{aligned}
+x_1 &amp;= 6 - 2t, \
+x_2 &amp;= 2t - 1, \
+x_3 &amp;= t, \quad t \in \mathbb{R}.
+\end{aligned}</p>
+<p>Sistem memiliki solusi tak hingga.</p>
 </section>
 </section>
 
@@ -477,22 +604,13 @@ x_1+2x_3&amp;=6\\
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Persamaan%20Linear.html"
+       href="Penyelesaian%20Sistem%20Persamaan%20Linear.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Sistem Persamaan Linear</p>
+        <p class="prev-next-title">Penyelesaian Sistem Persamaan Linier</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Eliminasi%20Gauss.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Penyelesaian Sistem Persamaan Linear</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -512,7 +630,7 @@ x_1+2x_3&amp;=6\\
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss-jordan">Eliminasi Gauss Jordan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
 </ul>
   </nav></div>
 

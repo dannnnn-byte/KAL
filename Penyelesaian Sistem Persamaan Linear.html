@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Penyelesaian Sistem Persamaan Linier &#8212; My sample book</title>
+    <title>SISTEM PERSAMAAN LINIER &#8212; My sample book</title>
   
   
   
@@ -177,14 +177,14 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Materi Komputasi Aljabar Linear
+                    Welcome to your Jupyter Book
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Persamaan%20Linear.html">Sistem Persamaan Linear</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Penyelesaian Sistem Persamaan Linier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gauss.html">Penyelesaian Eliminasi Gauss</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SISTEM PERSAMAAN LINIER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gauss.html">Penyelesaian Sistem Persamaan Linear</a></li>
 </ul>
 
     </div>
@@ -370,7 +370,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Penyelesaian Sistem Persamaan Linier</h1>
+    <h1>SISTEM PERSAMAAN LINIER</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -380,9 +380,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss-jordan">Eliminasi Gauss Jordan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-sistem-persamaan-linier">Definisi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier">Solusi Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi">Eliminasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-grafik">Solusi Grafik</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -394,55 +398,107 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="penyelesaian-sistem-persamaan-linier">
-<h1>Penyelesaian Sistem Persamaan Linier<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier" title="Link to this heading">#</a></h1>
-<section id="operasi-baris-elementer">
-<h2>Operasi Baris Elementer<a class="headerlink" href="#operasi-baris-elementer" title="Link to this heading">#</a></h2>
-<p>Operasi Baris Elementer (OBE) adalah salah satu alternatif dalam menyelesaikan suatu bentuk matriks seperti menentukan invers matriks dan penerapan matriks pada sistem persamaan linear menggunakan dua cara yaitu “Eliminasi Gauss” dan “Eliminasi Gauss-Jordan”.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="sistem-persamaan-linier">
+<h1>SISTEM PERSAMAAN LINIER<a class="headerlink" href="#sistem-persamaan-linier" title="Link to this heading">#</a></h1>
+<section id="definisi-sistem-persamaan-linier">
+<h2>Definisi Sistem Persamaan Linier<a class="headerlink" href="#definisi-sistem-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Sistem persamaan linier adalah kumpulan dari satu atau lebih persamaan linier yang memiliki variabel yang sama. Bentuk umum dari sistem persamaan linier dengan n variabel adalah:</p>
+<p><span class="math notranslate nohighlight">\(a_1x_1 + a_2x_2 + \dots + a_nx_n = b\)</span></p>
+<p>Di mana:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(( a_1, a_2, ..., a_n )\)</span> adalah koefisien,</p></li>
+<li><p><span class="math notranslate nohighlight">\(( x_1, x_2, ..., x_n )\)</span> adalah variabel,</p></li>
+<li><p><span class="math notranslate nohighlight">\(( b )\)</span> adalah konstanta.</p></li>
+</ul>
+<p>Sistem persamaan linier dapat memiliki solusi unik, banyak solusi, atau tidak memiliki solusi tergantung pada sifat dari persamaan dalam sistem tersebut.</p>
+</section>
+<section id="solusi-persamaan-linier">
+<h2>Solusi Persamaan Linier<a class="headerlink" href="#solusi-persamaan-linier" title="Link to this heading">#</a></h2>
+<p>Solusi dari sistem persamaan linier dapat ditemukan dengan berbagai metode, di antaranya:</p>
+<section id="eliminasi">
+<h3>Eliminasi<a class="headerlink" href="#eliminasi" title="Link to this heading">#</a></h3>
+<p>Metode eliminasi adalah teknik penyelesaian sistem persamaan linier dengan menghilangkan variabel secara bertahap hingga memperoleh bentuk yang lebih sederhana. Langkah-langkah metode eliminasi adalah:</p>
+<ol class="arabic simple">
+<li><p>Pilih satu variabel untuk dieliminasi.</p></li>
+<li><p>Kalikan salah satu atau kedua persamaan sehingga koefisien variabel yang ingin dieliminasi menjadi sama.</p></li>
+<li><p>Kurangkan atau tambahkan persamaan untuk menghilangkan variabel tersebut.</p></li>
+<li><p>Ulangi langkah di atas hingga sistem menjadi lebih sederhana dan mudah diselesaikan.</p></li>
+</ol>
+<p><strong>Contoh:</strong></p>
+<p><span class="math notranslate nohighlight">\(\begin{cases}
+y = 2x + 3 \\
+x + y = 15
+\end{cases}\)</span></p>
+<p>Langkah-langkah:</p>
+<ol class="arabic">
+<li><p>Substitusi <span class="math notranslate nohighlight">\(y = 2x + 3\)</span> ke persamaan kedua:</p>
+<p><span class="math notranslate nohighlight">\(x + (2x + 3) = 15\)</span></p>
+</li>
+<li><p>Sederhanakan:</p>
+<p><span class="math notranslate nohighlight">\(x + 2x + 3 = 15\)</span></p>
+<p><span class="math notranslate nohighlight">\(3x + 3 = 15\)</span></p>
+<p><span class="math notranslate nohighlight">\(3x = 12\)</span></p>
+<p><span class="math notranslate nohighlight">\(x = 4\)</span></p>
+</li>
+<li><p>Substitusi <span class="math notranslate nohighlight">\(x = 4\)</span> ke <span class="math notranslate nohighlight">\(y = 2x + 3\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(y = 2(4) + 3 = 8 + 3 = 11\)</span></p>
+</li>
+</ol>
+<p><strong>Solusi: <span class="math notranslate nohighlight">\((4,11)\)</span></strong></p>
 </section>
 <section id="eliminasi-gauss">
-<h2>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h2>
-<p>Metode eliminasi Gauss adalah metode untuk operasi nilai-nilai dalam matriks, untuk membuat matriks lebih sederhana lagi. Metode eliminasi gaus dikembangkan dari metode eliminasi, dengan cara menghilangkan atau mengurangi jumlah variabel, untuk mendapatkan nilai variabel bebas.</p>
+<h3>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h3>
+<p>Eliminasi Gauss adalah metode yang digunakan untuk menyederhanakan sistem persamaan linier ke dalam bentuk eselon baris. Langkah-langkahnya adalah:</p>
+<ol class="arabic simple">
+<li><p>Susun sistem persamaan dalam bentuk matriks augmented.</p></li>
+<li><p>Gunakan operasi baris elementer untuk mengubah matriks ke bentuk eselon baris.</p></li>
+<li><p>Dari bentuk eselon baris, gunakan substitusi balik untuk menemukan nilai variabel.</p></li>
+</ol>
+<p><strong>Contoh:</strong></p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix} 
+1 &amp; -2 &amp; | -3 \\ 
+1 &amp; 1 &amp; | 15 
+\end{bmatrix}\)</span></p>
+<ol class="arabic">
+<li><p>Eliminasi elemen pertama dari baris kedua dengan <span class="math notranslate nohighlight">\(R_2 \leftarrow R_2 - R_1\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix} 
+1 &amp; -2 &amp; | -3 \\ 
+0 &amp; 3 &amp; | 18 
+\end{bmatrix}\)</span></p>
+</li>
+<li><p>Bagi baris kedua dengan 3 agar <span class="math notranslate nohighlight">\(y\)</span> menjadi 1:</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix} 
+1 &amp; -2 &amp; | -3 \\ 
+0 &amp; 1 &amp; | 6 
+\end{bmatrix}\)</span></p>
+</li>
+<li><p>Gunakan <span class="math notranslate nohighlight">\(R_1 \leftarrow R_1 + 2R_2\)</span> untuk menghilangkan elemen kedua di baris pertama:</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix} 
+1 &amp; 0 &amp; | 4 \\ 
+0 &amp; 1 &amp; | 6 
+\end{bmatrix}\)</span></p>
+</li>
+</ol>
+<p>Sehingga diperoleh <strong><span class="math notranslate nohighlight">\(x = 4\)</span> dan <span class="math notranslate nohighlight">\(y = 11\)</span></strong>.</p>
 </section>
-<section id="eliminasi-gauss-jordan">
-<h2>Eliminasi Gauss Jordan<a class="headerlink" href="#eliminasi-gauss-jordan" title="Link to this heading">#</a></h2>
-<p>Eliminasi Gauss Jordan adalah algoritma yang memungkinkan kita mengubah sistem linear menjadi sistem ekuivalen dalam bentuk eselon baris tereduksi.</p>
-<p>Contoh soal 1
-Selesaikan dengan Menggunakan Eliminasi Gauss</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{array}{ac}
-x_1+2x_2+3x_3&amp;=6\\
-2x_1+4x_2+6x_3&amp;=12\\
-x_3+x_2&amp;=2
-\end{array}
-\end{split}\]</div>
-<p>Penyelesaian</p>
-<p>Contoh Soal 2
-$<span class="math notranslate nohighlight">\(
-\begin{array}{ac}
-x_1+x_2+x_3&amp;=3\\
-2x_1+x_3&amp;=5\\
-x_3+2x_2&amp;=3
-\end{array}
-\)</span>$</p>
-<p>Penyelesaian</p>
-<p>Contoh Soal 3
-$<span class="math notranslate nohighlight">\(
-\begin{array}{ac}
-2x_1+2x_2&amp;=y\\
-x_1+x_2&amp;=2\\
-\end{array}
-\)</span>$</p>
-<p>Penyelesaian</p>
-<p>Contoh Soal 4
-$<span class="math notranslate nohighlight">\(
-\begin{array}{ac}
-x_1+x_2&amp;=5\\
-x_1+2x_3&amp;=6\\
-\end{array}
-\)</span>$</p>
-<p>Penyelesaian</p>
+<section id="solusi-grafik">
+<h3>Solusi Grafik<a class="headerlink" href="#solusi-grafik" title="Link to this heading">#</a></h3>
+<p>Metode solusi grafik digunakan untuk sistem persamaan linier dengan dua variabel. Langkah-langkahnya adalah:</p>
+<ol class="arabic simple">
+<li><p>Gambarkan masing-masing persamaan sebagai garis pada bidang koordinat.</p></li>
+<li><p>Titik potong antara dua garis tersebut adalah solusi dari sistem.</p></li>
+<li><p>Jika garis berpotongan di satu titik, maka ada satu solusi unik.</p></li>
+<li><p>Jika garis sejajar, maka tidak ada solusi.</p></li>
+<li><p>Jika garis bertumpuk, maka ada banyak solusi.</p></li>
+</ol>
+<p><strong>Contoh:</strong>
+Untuk sistem persamaan:</p>
+<p><span class="math notranslate nohighlight">\(\begin{cases}
+y = 2x + 3\\
+y = -x + 15
+\end{cases}\)</span></p>
+<iframe src="https://www.geogebra.org/calculator/nsjfzexc?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+</section>
 </section>
 </section>
 
@@ -510,9 +566,13 @@ x_1+2x_3&amp;=6\\
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi-baris-elementer">Operasi Baris Elementer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss-jordan">Eliminasi Gauss Jordan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi-sistem-persamaan-linier">Definisi Sistem Persamaan Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-persamaan-linier">Solusi Persamaan Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi">Eliminasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminasi-gauss">Eliminasi Gauss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solusi-grafik">Solusi Grafik</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
